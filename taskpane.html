@@ -81,15 +81,20 @@ Test Button</button>
         status.textContent = '❌ Error: ' + err.message;
       });
     }
-    function testButton() {
+   function testButton() {
     Word.run(function (context) {
 
         var body = context.document.body;
 
         body.insertParagraph(
-            "Test button works successfully!",
+            "This text was formatted by the Take2 Add-in.",
             Word.InsertLocation.end
         );
+
+        body.font.name = "Calibri";
+        body.font.size = 14;
+        body.font.bold = true;
+        body.font.color = "#E8500A";
 
         return context.sync();
     })
