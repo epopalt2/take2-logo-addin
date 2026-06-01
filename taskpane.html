@@ -81,13 +81,13 @@ Apply Font Package</button>
         status.textContent = '❌ Error: ' + err.message;
       });
     }
-   function AddAptosFont() {
+  function AddAptosFont() {
     Word.run(function (context) {
 
-        var body = context.document.body;
+        var range = context.document.getSelection();
 
-        body.font.name = "Aptos";
-   
+        range.font.name = "Aptos";
+
         return context.sync();
     })
     .catch(function (error) {
