@@ -84,9 +84,13 @@ Apply Font Package</button>
   function AddAptosFont() {
     Word.run(function (context) {
 
-        var range = context.document.getSelection();
+        var body = context.document.body;
 
-        range.font.name = "Aptos";
+        var p = body.insertParagraph("", Word.InsertLocation.end);
+
+        p.font.name = "Aptos";
+
+        p.select();
 
         return context.sync();
     })
