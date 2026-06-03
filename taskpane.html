@@ -89,17 +89,6 @@ Apply Font Package</button>
         // Apply Aptos to existing document body
         body.font.name = "Aptos";
 
-        // Insert visible test text using Aptos
-        var p = body.insertParagraph(
-            "Aptos font test - type after this line.",
-            Word.InsertLocation.end
-        );
-
-        p.font.name = "Aptos";
-
-        // Put cursor on that paragraph
-        p.select();
-
         return context.sync();
     })
     .catch(function (error) {
